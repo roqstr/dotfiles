@@ -1,0 +1,66 @@
+; A configuration file consists of sections, each led by a [section] header,
+; followed by key/value entries separated by a specific string (= or : by default).
+; By default, section names are case sensitive but keys are not. Leading and
+; trailing whitespace is removed from keys and values. Values can be omitted,
+; in which case the key/value delimiter may also be left out. Values can also
+; span multiple lines, as long as they are indented deeper than the first line
+; of the value. Depending on the parser’s mode, blank lines may be treated
+; as parts of multiline values or ignored.
+
+; Configuration files may include comments, prefixed by specific characters
+; (# and ; by default). Comments may appear on their own on an otherwise
+; empty line, possibly indented.
+
+; The [bar] section is reserved and used by the bar script. It contains the
+; variables bound to the script and should not be mirrored to any file in the
+; captain.d directory.
+
+[bar]
+background = "#55808da0"
+foreground = "#FF201a11"
+format = "workspace:pacman:mail|clock|networkAmount:cores:memory:network:volume"
+height = 20
+fonts = "DejaVuSansMono-9"
+	"fontawesome-9"	
+		
+dock = "top"
+force = true
+offset = 0
+
+
+[mail]
+reload = 300
+mouse-left = "nylas"
+
+[pacman]
+mouse-left = "urxvtc -geometry +0+20 -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outPacaur'"
+reload = 3600
+
+[network]
+mouse-left = "urxvtc -geometry +1265+20  -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outNetwork'"
+
+[networkAmount]
+mouse-left = "urxvtc -geometry +1265+20  -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outNetworkAmount'"
+
+[cores]
+mouse-left = "urxvtc -geometry +1265+20  -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outCores'"
+
+[workspace]
+mouse-left = "xdotool set_desktop --relative 1"
+scroll-up = "xdotool set_desktop --relative 1"
+scroll-down  = "xdotool set_desktop --relative 3"
+
+[memory]
+mouse-left = "urxvtc -geometry +1265+20  -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outMemory'"
+
+
+[volume]
+scroll-up = "amixer -D pulse set Master 5%+ unmute"
+scroll-down = "amixer -D pulse set Master 5%- unmute"
+mouse-left = "amixer -D pulse set Master toggle"
+
+[clock]
+overline = true
+underline = true
+mouse-left = "urxvtc -geometry 40x15+800+20  -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outClock'"
+reload = 5

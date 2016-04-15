@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Dependencies: *
+date '+%H:%M %a, %d %B %Y'
+#tr '[:lower:]' '[:upper:]' <<< $(date "+%I:%M %p")

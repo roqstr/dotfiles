@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+re='^[0-9]+$'
+
+updateCountAUR="$(pacaur -k | wc -l)"
+if ! [[ $updateCountAUR =~ $re ]]
+then
+updateCountAUR=0;
+fi
+
+updateCountOffical="$(checkupdates | wc -l)"
+if ! [[ $updateCountOffical =~ $re ]]
+then
+updateCountOffical=0;
+fi
+
+update_count=$(( $updateCountAUR + $updateCountOffical ))
+if [ "$update_count" -ne 0 ]; then
+#  echo " $update_count"
+  echo " $update_count" 
+fi

@@ -1,0 +1,18 @@
+urxvt.font:     xft:DejaVu\ Sans\ Mono\ for\ Powerline:book:size=10:antialias=true
+urxvt.boldFont: xft:DejaVu\ Sans\ Mono\ for\ Powerline:bold:size=10:antialias=true
+
+urxvt*depth:32
+urxvt*foreground:#B0B0B0
+urxvt*background:rgba:2000/2000/2000/cccc
+
+urxvt*scrollBar: false
+
+rofi.key-run:			F2
+rofi.key-window:		F6
+rofi.terminal:			urxvt
+
+rofi.color-enabled: true
+rofi.color-window: #273238, #273238, #1e2529
+rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
+rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
+rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844

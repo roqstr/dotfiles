@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+  read t f <<< `grep -E 'Mem(Total|Free)' /proc/meminfo |awk '{print $2}'`
+  read b c <<< `grep -E '^(Buffers|Cached)' /proc/meminfo |awk '{print $2}'`
+
+  var=$(bc <<< "scale=2; 100 - ( $f + $b + $c )/ $t * 100" | cut -d. -f1)
+
+    echo " $var%"

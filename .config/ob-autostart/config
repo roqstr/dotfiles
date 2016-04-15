@@ -1,0 +1,13 @@
+# OB_Autostart config
+LAUNCH_LIST = [ 
+	 ("nylas -b","nylas -b","0","*"),
+	 ("redshift","redshift","0","*"),
+	 ("rofi","rofi","0","*"),
+	 ("captain","captain","0","*"),
+	 ("plank","plank","0","*"),
+	 ("urxvt deamon","urxvtd -f","0","*"),
+	 ("wpg","~/.wallpapers/wp_init.sh","0","*"),
+	 ("xfce4-notifyd","xfce4-notifyd","0","*"),
+	 ("xfce4-panel","xfce4-panel","0",""),
+	 ("compton","compton -b","0","*"),
+	]

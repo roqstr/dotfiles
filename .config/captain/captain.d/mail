@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+amount=$(sqlite3 -line ~/.nylas/edgehill.db 'SELECT COUNT(*) FROM Thread WHERE Thread.unread = 1 and Thread.in_all_mail = 1' | grep -o '[0-9]*')
+if [ "$amount" -ne "0" ]
+then
+echo " $amount"
+fi
