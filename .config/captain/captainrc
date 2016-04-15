@@ -16,8 +16,8 @@
 ; captain.d directory.
 
 [bar]
-background = "#55808da0"
-foreground = "#FF201a11"
+background = "#88847ba0"
+foreground = "#FF000720"
 format = "workspace:pacman:mail|clock|networkAmount:cores:memory:network:volume"
 height = 20
 fonts = "DejaVuSansMono-9"

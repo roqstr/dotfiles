@@ -12,7 +12,7 @@ import signal
 files = []
 
 walldir = "/home/marco/.wallpapers/"
-slimbg = "/usr/share/slim/themes/wpgtk/background.png"
+slimbg = "/usr/share/slim/themes/blurry-clean/background.png"
 captainconf = "/home/marco/.config/captain/captainrc"
 #captainconf = "/home/marco/test"
 
@@ -56,7 +56,7 @@ captainrc = open(captainconf, "r")
 captainrcContent = captainrc.read()
 captainrc.close()
 
-captainrcContent = re.sub(r'background = "#[a-fA-F0-9]{8}"', 'background = "#AA' + colors[3] , captainrcContent)
+captainrcContent = re.sub(r'background = "#[a-fA-F0-9]{8}"', 'background = "#88' + colors[3] , captainrcContent)
 captainrcContent = re.sub(r'foreground = "#[a-fA-F0-9]{8}"', 'foreground = "#FF' + colors[0], captainrcContent)
 
 captainrc = open(captainconf, "w")
