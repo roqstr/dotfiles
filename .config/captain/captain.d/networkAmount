@@ -1,25 +1,15 @@
 #!/usr/bin/env bash
-# Dependencies: bspc, siji
-#array =""
-#a=$(awk '{if(l1){print ($2-l1)/1024"kB/s",($10-l2)/1024"kB/s"} else{l1=$2; l2=$10;}}' \
-#    <(grep wlp3s0 /proc/net/dev) <(sleep 1; grep wlp3s0 /proc/net/dev)) 
-#IFS=' ' read -r -a $array <<< "$a"
-
-#ifstat awk '/wlp3s0/ {print}'
-
-#echo "${array[0]}"
-#echo $array
 
 IN=$(ifstat | grep -o -P 'wlp3s0(\s*\d*){8}')
 arrIN=(${IN//;/ })
 rawUP=$(bc <<< "scale=0; ${arrIN[7]} / 1024/ 5" )
 rawDOWN=$(bc <<< "scale=0; ${arrIN[5]} / 1024 / 5" )
 
-if [$rawUP -eq ""]
+if [ -z "$rawUP" ]
 then
 rawUP="0"
 fi
-if [$rawDOWN -eq ""]
+if [ -z "$rawDOWN" ]
  then
 rawDOWN="0"
 fi

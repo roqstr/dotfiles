@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
+function preexec {
+      printf "\033]0;%s\a" "$1"
+    }
 pal --color -c 10

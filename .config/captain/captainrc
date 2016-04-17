@@ -16,9 +16,9 @@
 ; captain.d directory.
 
 [bar]
-background = "#88847ba0"
-foreground = "#FF000720"
-format = "workspace:pacman:mail|clock|networkAmount:cores:memory:network:volume"
+background = "#8896a0a0"
+foreground = "#FF200408"
+format = "workspace:pacman:mail|clock|music:cores:memory:network:volume"
 height = 20
 fonts = "DejaVuSansMono-9"
 	"fontawesome-9"	
@@ -27,14 +27,16 @@ dock = "top"
 force = true
 offset = 0
 
-
 [mail]
 reload = 300
-mouse-left = "nylas"
+mouse-left = ".config/captain/output/focusOrCreate nylas"
 
 [pacman]
 mouse-left = "urxvtc -geometry +0+20 -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outPacaur'"
 reload = 3600
+
+[music]
+mouse-left = "urxvtc -geometry +1265+20  -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outMusic'"
 
 [network]
 mouse-left = "urxvtc -geometry +1265+20  -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outNetwork'"
@@ -53,14 +55,5 @@ scroll-down  = "xdotool set_desktop --relative 3"
 [memory]
 mouse-left = "urxvtc -geometry +1265+20  -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outMemory'"
 
-
-[volume]
-scroll-up = "amixer -D pulse set Master 5%+ unmute"
-scroll-down = "amixer -D pulse set Master 5%- unmute"
-mouse-left = "amixer -D pulse set Master toggle"
-
 [clock]
-overline = true
-underline = true
-mouse-left = "urxvtc -geometry 40x15+800+20  -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outClock'"
-reload = 5
+mouse-left = "urxvtc -geometry 40x15+800+20  -name 'test' -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outClock'"
