@@ -14,7 +14,6 @@ files = []
 walldir = "/home/marco/.wallpapers/"
 slimbg = "/usr/share/slim/themes/blurry-clean/background.png"
 captainconf = "/home/marco/.config/captain/captainrc"
-#captainconf = "/home/marco/test"
 
 for( dirpath, dirnames, filenames ) in walk( walldir ):
     files.extend( filenames )
@@ -36,16 +35,14 @@ execute_gcolorchange( files[x] )
 
 inputString = """#!/bin/bash 
 wpcscript change """ + files [x] + " && xrdb -merge /home/marco/.wallpapers/." + files [x] + ".xres"
-
-shutil.copy(walldir + files[x], slimbg)
-im = Image.open(slimbg)
-filter = ImageFilter.GaussianBlur(10.0)
-imBlurred = im.filter(filter) 
-imBlurred.save(slimbg, "PNG")
-
 text_file = open(walldir + "wp_init.sh", "w")
 text_file.write(inputString)
 text_file.close()
+
+shutil.copy(walldir + files[x], slimbg)
+im = Image.open(slimbg)
+imBlurred = im.filter(ImageFilter.GaussianBlur(10.0)) 
+imBlurred.save(slimbg, "PNG")
 
 colorfile = open(walldir + '.' + files[x] + '.colors', "r")
 colorfileContent = colorfile.read()
@@ -62,8 +59,6 @@ captainrcContent = re.sub(r'foreground = "#[a-fA-F0-9]{8}"', 'foreground = "#FF'
 captainrc = open(captainconf, "w")
 captainrc.write(captainrcContent)
 captainrc.close()
-
-
 
 pid  = check_output(["pidof","lemonbar"])
 os.kill(int(pid), signal.SIGTERM) 
