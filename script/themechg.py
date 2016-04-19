@@ -44,17 +44,24 @@ im = Image.open(slimbg)
 imBlurred = im.filter(ImageFilter.GaussianBlur(10.0)) 
 imBlurred.save(slimbg, "PNG")
 
-colorfile = open(walldir + '.' + files[x] + '.colors', "r")
-colorfileContent = colorfile.read()
-colorfile.close()
-colors = re.findall(r'[a-fA-F0-9]{6}"',colorfileContent)
+colorFile = open('.main_colors',"r")
+rawColor = colorFile.read()
+colorFile.close()
+colors = re.findall(r'[a-fA-F0-9]{6}', rawColor) #[0] is foreground, [1] is background
 	
 captainrc = open(captainconf, "r")
 captainrcContent = captainrc.read()
 captainrc.close()
 
-captainrcContent = re.sub(r'background = "#[a-fA-F0-9]{8}"', 'background = "#88' + colors[3] , captainrcContent)
-captainrcContent = re.sub(r'foreground = "#[a-fA-F0-9]{8}"', 'foreground = "#FF' + colors[0], captainrcContent)
+rgbColors = []
+argbColors = []
+for color in colors:
+	rgbColors.append("#" + color)
+	argbColors.append('#FF' + color)
+
+
+captainrcContent = re.sub(r'background = "#[a-fA-F0-9]{8}"', 'background = "' + argbColors[1]  + '"' , captainrcContent)
+captainrcContent = re.sub(r'foreground = "#[a-fA-F0-9]{8}"', 'foreground = "' + argbColors[0] + '"', captainrcContent)
 
 captainrc = open(captainconf, "w")
 captainrc.write(captainrcContent)

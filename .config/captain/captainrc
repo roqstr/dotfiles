@@ -16,9 +16,9 @@
 ; captain.d directory.
 
 [bar]
-background = "#88a0a058"
-foreground = "#FF1c2011"
-format = "workspace:pacman:mail|clock|music:cores:memory:network:volume"
+background = "#FF3e4d42"
+foreground = "#FF677e6c"
+format = "workspace:pacman:mail|clock|music:cores:memory:network:volume:power"
 height = 20
 fonts = "DejaVuSansMono-9"
 	"fontawesome-9"	
@@ -34,6 +34,9 @@ mouse-left = ".config/captain/output/focusOrCreate nylas"
 [pacman]
 mouse-left = "urxvtc -geometry +0+20 -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outPacaur'"
 reload = 3600
+
+[power]
+mouse-left = "oblogout"
 
 [music]
 mouse-left = "urxvtc -geometry +1265+20  -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outMusic'"
@@ -56,4 +59,6 @@ scroll-down  = "xdotool set_desktop --relative 3"
 mouse-left = "urxvtc -geometry +1265+20  -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outMemory'"
 
 [clock]
-mouse-left = "urxvtc -geometry 40x15+800+20  -name 'test' -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outClock'"
+mouse-left = "urxvtc -geometry 40x15+800+20 -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outClock'"
+
+
