@@ -884,23 +884,6 @@ Error opening terminal: unknown.
 Reading configuration from /home/marco/.ncmpcpp/config...
 Terminal doesn't support window title, skipping 'enable_window_title'.
 Error opening terminal: unknown.
-'t support window title, skipping 'enable_window_title'.
-Error opening terminal: unknown.
-(standard_in) 1: syntax error
-Reading configuration from /home/marco/.ncmpcpp/config...
-Terminal doesn't support window title, skipping 'enable_window_title'.
-Error opening terminal: unknown.
-(standard_in) 1: syntax error
-Reading configuration from /home/marco/.ncmpcpp/config...
-Terminal doesn't support window title, skipping 'enable_window_title'.
-Error opening terminal: unknown.
-Reading configuration from /home/marco/.ncmpcpp/config...
-Terminal doesn't support window title, skipping 'enable_window_title'.
-Error opening terminal: unknown.
-Reading configuration from /home/marco/.ncmpcpp/config...
-Terminal doesn't support window title, skipping 'enable_window_title'.
-Error opening terminal: unknown.
-(standard_in) 1: syntax error
 Reading configuration from /home/marco/.ncmpcpp/config...
 Terminal doesn't support window title, skipping 'enable_window_title'.
 Error opening terminal: unknown.
@@ -925,11 +908,6 @@ Error opening terminal: unknown.
 Reading configuration from /home/marco/.ncmpcpp/config...
 Terminal doesn't support window title, skipping 'enable_window_title'.
 Error opening terminal: unknown.
-(standard_in) 1: syntax error
-Reading configuration from /home/marco/.ncmpcpp/config...
-Terminal doesn't support window title, skipping 'enable_window_title'.
-Error opening terminal: unknown.
-(standard_in) 1: syntax error
 Reading configuration from /home/marco/.ncmpcpp/config...
 Terminal doesn't support window title, skipping 'enable_window_title'.
 Error opening terminal: unknown.
@@ -938,6 +916,26 @@ Terminal doesn't support window title, skipping 'enable_window_title'.
 Error opening terminal: unknown.
 Reading configuration from /home/marco/.ncmpcpp/config...
 Terminal doesn't support window title, skipping 'enable_window_title'.
+Error opening terminal: unknown.
+Reading configuration from /home/marco/.ncmpcpp/config...
+Terminal doesn't support window title, skipping 'enable_window_title'.
+Error opening terminal: unknown.
+Reading configuration from /home/marco/.ncmpcpp/config...
+Terminal doesn't support window title, skipping 'enable_window_title'.
+Error opening terminal: unknown.
+Reading configuration from /home/marco/.ncmpcpp/config...
+Terminal doesn't support window title, skipping 'enable_window_title'.
+Error opening terminal: unknown.
+Reading configuration from /home/marco/.ncmpcpp/config...
+Terminal doesn't support window title, skipping 'enable_window_title'.
+Error opening terminal: unknown.
+Reading configuration from /home/marco/.ncmpcpp/config...
+Terminal doesn't support window title, skipping 'enable_window_title'.
+Error opening terminal: unknown.
+Reading configuration from /home/marco/.ncmpcpp/config...
+Terminal doesn't support window title, skipping 'enable_window_title'.
+Error opening terminal: unknown.
+indow title, skipping 'enable_window_title'.
 Error opening terminal: unknown.
 Reading configuration from /home/marco/.ncmpcpp/config...
 Terminal doesn't support window title, skipping 'enable_window_title'.
