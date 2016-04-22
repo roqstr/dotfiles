@@ -1,2 +1,2 @@
 #!/bin/bash 
-wpcscript change forest_path_2-wallpaper-1920x1080.jpg && xrdb -merge /home/marco/.wallpapers/.forest_path_2-wallpaper-1920x1080.jpg.xres
+wpcscript change m6ir41h.jpg && xrdb -merge /home/marco/.wallpapers/.m6ir41h.jpg.xres

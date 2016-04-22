@@ -12,7 +12,7 @@ rofi.key-window:		F6
 rofi.terminal:			urxvt
 
 rofi.color-enabled: true
-rofi.color-window: argb:88273238, argb:88273238, #1e2529
-rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
-rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
+rofi.color-window: argb:88273238, argb:88273238, argb:881e2529
+rofi.color-normal: argb:88273238, argb:88c1c1c1, argb:8873238, argb:88394249, argb:88ffffff
+rofi.color-active: #27333238, #80cbc4, #273238, #394249, #80cbc4
 rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844

@@ -1,4 +1,4 @@
-from subprocess import call, check_output
+from subprocess import call, check_output, Popen
 from os import walk
 from PIL import ImageFilter, Image
 from colorparser import execute_gcolorchange
@@ -56,8 +56,8 @@ captainrc.close()
 rgbColors = []
 argbColors = []
 for color in colors:
-	rgbColors.append("#" + color)
-	argbColors.append('#FF' + color)
+    rgbColors.append( "#" + color )
+    argbColors.append( "#FF" + color )
 
 
 captainrcContent = re.sub(r'background = "#[a-fA-F0-9]{8}"', 'background = "' + argbColors[1]  + '"' , captainrcContent)
@@ -67,6 +67,5 @@ captainrc = open(captainconf, "w")
 captainrc.write(captainrcContent)
 captainrc.close()
 
-pid  = check_output(["pidof","lemonbar"])
-os.kill(int(pid), signal.SIGTERM) 
-#call("captain")
+os.kill(int(check_output(["pidof","lemonbar"])), signal.SIGTERM) 
+Popen( 'captain', shell=True) 

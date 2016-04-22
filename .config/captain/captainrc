@@ -16,8 +16,8 @@
 ; captain.d directory.
 
 [bar]
-background = "#FF3e4d42"
-foreground = "#FF677e6c"
+background = "#FF4f5458"
+foreground = "#FF828c93"
 format = "workspace:pacman:mail|clock|music:cores:memory:network:volume:power"
 height = 20
 fonts = "DejaVuSansMono-9"
@@ -32,7 +32,7 @@ reload = 300
 mouse-left = ".config/captain/output/focusOrCreate nylas"
 
 [pacman]
-mouse-left = "urxvtc -geometry +0+20 -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outPacaur'"
+mouse-left = "urxvtc -geometry +0+20  -e bash -c '/usr/bin/sh ~/.config/captain/output/outPacaur'"
 reload = 3600
 
 [power]
