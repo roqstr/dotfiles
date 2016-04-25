@@ -9,15 +9,23 @@ import shutil
 import re
 import signal
 
-files = []
-
 walldir = "/home/marco/.wallpapers/"
 slimbg = "/usr/share/slim/themes/blurry-clean/background.png"
 captainconf = "/home/marco/.config/captain/captainrc"
+xres = "/home/marco/.Xresources"
+
+files = []
+rgbColors = []
+argbColors = []
+rofiColors = []
+try:
+     os.kill(int(check_output(["pidof","lemonbar"])), signal.SIGTERM) 
+     os.kill(int(check_output(["pidof","rofi"])), signal.SIGTERM)
+except:
+    print("Could not kill rofi & captain")
 
 for( dirpath, dirnames, filenames ) in walk( walldir ):
     files.extend( filenames )
-
 
 files = [ elem for elem in files if not ".Xres" in elem ]
 files = [ elem for elem in files if not ".sample" in elem ]
@@ -52,20 +60,28 @@ colors = re.findall(r'[a-fA-F0-9]{6}', rawColor) #[0] is foreground, [1] is back
 captainrc = open(captainconf, "r")
 captainrcContent = captainrc.read()
 captainrc.close()
-
-rgbColors = []
-argbColors = []
 for color in colors:
     rgbColors.append( "#" + color )
     argbColors.append( "#FF" + color )
-
+    rofiColors.append( "argb:AA" + color )
 
 captainrcContent = re.sub(r'background = "#[a-fA-F0-9]{8}"', 'background = "' + argbColors[1]  + '"' , captainrcContent)
 captainrcContent = re.sub(r'foreground = "#[a-fA-F0-9]{8}"', 'foreground = "' + argbColors[0] + '"', captainrcContent)
-
 captainrc = open(captainconf, "w")
 captainrc.write(captainrcContent)
 captainrc.close()
 
-os.kill(int(check_output(["pidof","lemonbar"])), signal.SIGTERM) 
-Popen( 'captain', shell=True) 
+xresources = open(xres, "r")
+xresContent = xresources.read()
+xresources.close()
+
+xresContent = re.sub(r'rofi.color-window: argb:.{8},', 'rofi.color-window: ' + rofiColors[1] + ',', xresContent)
+xresContent = re.sub(r'rofi.color-active: argb:.{8},', 'rofi.color-active: ' + rofiColors[0] + ',', xresContent)
+#manipulate rofi colors
+xresources=open(xres, "w")
+xresources.write(xresContent)
+xresources.close()
+
+call( [ "xrdb", "-merge", xres ] )
+Popen( 'captain', shell=True)
+Popen( 'rofi', shell=True)
