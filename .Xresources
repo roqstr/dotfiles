@@ -7,17 +7,17 @@ urxvt*background:rgba:2000/2000/2000/cccc
 
 urxvt*scrollBar: false
 
-rofi.key-run:			F2
-rofi.key-window:		F6
 rofi.terminal:			urxvt
 
 rofi.color-enabled: true
-rofi.color-window: argb:AA542631, argb:00000000, argb:00000000
+rofi.color-window: argb:AA3e4c4a, argb:00000000, argb:00000000
 rofi.color-normal: argb:00000000, argb:ffc1c1c1, argb:00000000, argb:AA394249, argb:ffffffff
-rofi.color-active: argb:AA843c4d, argb:ff80cbc4, argb:00000000, argb:00000000, argb:ff80cbc4
+rofi.color-active: argb:AA667e7b, argb:ff80cbc4, argb:00000000, argb:00000000, argb:ff80cbc4
 rofi.color-urgent: argb:FF273238, argb:ffff1844, argb:00000000, argb:00000000, argb:ffff1844
 
 rofi.opacity: 100
 rofi.width: 50
 rofi.lines: 5
-
+rofi.fullscreen: false 
+rofi.hide-scrollbar: true
+rofi.bw: 0

@@ -1,2 +1,2 @@
 #!/bin/bash 
-wpcscript change qfAloIR.jpg && xrdb -merge /home/marco/.wallpapers/.qfAloIR.jpg.xres
+wpcscript change 129.jpg && xrdb -merge /home/marco/.wallpapers/.129.jpg.xres
