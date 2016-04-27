@@ -17,7 +17,7 @@ rofi.color-urgent: argb:FF273238, argb:ffff1844, argb:00000000, argb:00000000, a
 
 rofi.opacity: 100
 rofi.width: 50
-rofi.lines: 5
+rofi.lines: 10 
 rofi.fullscreen: false 
 rofi.hide-scrollbar: true
 rofi.bw: 0
