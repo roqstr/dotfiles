@@ -12,4 +12,5 @@ else
 fi
 
 
-echo "$token $volume%"
+echo "$token $volume"
+#%"

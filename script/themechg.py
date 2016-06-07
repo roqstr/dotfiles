@@ -2,6 +2,7 @@ from subprocess import call, check_output, Popen
 from os import walk
 from PIL import ImageFilter, Image
 from colorparser import execute_gcolorchange
+#from matplotlib.colors as colors
 import os.path
 import random
 import fileinput
@@ -47,6 +48,8 @@ text_file = open(walldir + "wp_init.sh", "w")
 text_file.write(inputString)
 text_file.close()
 
+
+#SLIM
 shutil.copy(walldir + files[x], slimbg)
 im = Image.open(slimbg)
 imBlurred = im.filter(ImageFilter.GaussianBlur(10.0)) 
@@ -56,7 +59,8 @@ colorFile = open('.main_colors',"r")
 rawColor = colorFile.read()
 colorFile.close()
 colors = re.findall(r'[a-fA-F0-9]{6}', rawColor) #[0] is foreground, [1] is background
-	
+
+#CAPTAIN	
 captainrc = open(captainconf, "r")
 captainrcContent = captainrc.read()
 captainrc.close()
@@ -65,7 +69,15 @@ for color in colors:
     argbColors.append( "#FF" + color )
     rofiColors.append( "argb:AA" + color )
 
-captainrcContent = re.sub(r'background = "#[a-fA-F0-9]{8}"', 'background = "' + argbColors[1]  + '"' , captainrcContent)
+clouds = "#ffecf0f1"
+darkbg = "#ff222222"
+
+#colors.hex2color(clouds)
+#colors.hex2color(midnight)
+
+
+
+captainrcContent = re.sub(r'background = "#[a-fA-F0-9]{8}"', 'background = "' + darkbg  + '"' , captainrcContent)
 captainrcContent = re.sub(r'foreground = "#[a-fA-F0-9]{8}"', 'foreground = "' + argbColors[0] + '"', captainrcContent)
 captainrc = open(captainconf, "w")
 captainrc.write(captainrcContent)
@@ -75,6 +87,7 @@ xresources = open(xres, "r")
 xresContent = xresources.read()
 xresources.close()
 
+#ROFI
 xresContent = re.sub(r'rofi.color-window: argb:.{8},', 'rofi.color-window: ' + rofiColors[1] + ',', xresContent)
 xresContent = re.sub(r'rofi.color-active: argb:.{8},', 'rofi.color-active: ' + rofiColors[0] + ',', xresContent)
 #manipulate rofi colors

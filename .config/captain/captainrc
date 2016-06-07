@@ -16,15 +16,15 @@
 ; captain.d directory.
 
 [bar]
-background = "#FF3e4c4a"
-foreground = "#FF667e7b"
-format = "workspace:pacman:mail|clock|music:cores:memory:network:volume:power"
+background = "#ff222222"
+foreground = "#FF9b5c34"
+format = "workspace:pacman:mail|clock|cores:memory:network:volume:power"
 height = 20
 fonts = "DejaVuSansMono-9"
 	"fontawesome-9"	
 		
-dock = "top"
-force = true
+dock = "bottom"
+force = false
 offset = 0
 
 [mail]
@@ -33,7 +33,7 @@ mouse-left = ".config/captain/output/focusOrCreate nylas"
 
 [pacman]
 mouse-left = "urxvtc -geometry +0+20  -e bash -c '/usr/bin/sh ~/.config/captain/output/outPacaur'"
-reload = 3600
+reload = 600
 
 [power]
 mouse-left = "oblogout"
@@ -51,6 +51,7 @@ mouse-left = "urxvtc -geometry +1265+20  -hold -e bash -c '/usr/bin/sh ~/.config
 mouse-left = "urxvtc -geometry +1265+20  -hold -e bash -c '/usr/bin/sh ~/.config/captain/output/outCores'"
 
 [workspace]
+reload = 3
 mouse-left = "xdotool set_desktop --relative 1"
 scroll-up = "xdotool set_desktop --relative 1"
 scroll-down  = "xdotool set_desktop --relative 3"

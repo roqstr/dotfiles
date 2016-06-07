@@ -57,8 +57,9 @@ fi
 #exec xterm -geometry 80x66+0+0 -name login
 
 
-case $1 in 
-openbox|*)
-	exec openbox-session
-	;;
-esac
+#case $1 in 
+#openbox|*)
+#	exec openbox-session
+#	;;
+#esac
+exec i3

@@ -5,4 +5,5 @@
 
   var=$(bc <<< "scale=2; 100 - ( $f + $b + $c )/ $t * 100" | cut -d. -f1)
 
-    echo " $var%"
+    echo " $var"
+    #%"

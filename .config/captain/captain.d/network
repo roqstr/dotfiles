@@ -21,4 +21,5 @@ percent=0
 else
 percent=$(awk "BEGIN { pc=100*${STR}/${TOTAL}; i=int(pc); print (pc-i<0.5)?i:i+1 }")
 fi
-echo "$percent%" 
+echo "$percent"
+#%" 

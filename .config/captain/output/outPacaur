@@ -7,7 +7,7 @@ echo '--- WRAPPED UP ---'
 
 read -p "Update all (y/n)?" choice
 case "$choice" in 
-  y|Y ) pacaur -Syu --noconfirm;;
+  y|Y ) pacaur -Syu --noconfirm --noedit;;
   n|N ) echo "aborted";;
   * ) echo "invalid";;
 esac
